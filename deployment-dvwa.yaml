@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Damnvwa
+  namespace: hacking
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: Damnvwa
+  template:
+    metadata:
+      labels:
+        app: Damnvwa
+    spec:
+      containers:
+      - name: Damnvwa
+        image: vulnerables/web-dvwa
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+      
